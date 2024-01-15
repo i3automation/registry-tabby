@@ -84,6 +84,17 @@
     "sha256": "5ac3ba2eecc4f41d0cd65a5e6d875d38d4c3dd4ebb1161b85e5134817b484938"
   },
   {
+    "name": "Vistral-7B",
+    "license_name": "afl-3.0",
+    "license_url": "https://huggingface.co/models?license=license%3Aafl-3.0",
+    "provider_url": "https://huggingface.co/janhq/Vistral-7b-Chat-GGUF",
+    "chat_template": "<s>{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + '</s> ' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}",
+    "urls": [
+      "https://huggingface.co/janhq/Vistral-7b-Chat-GGUF/resolve/main/vitral-7b-chat.Q8_0.gguf"
+    ],
+    "sha256": "7c2d59e6b6e404de3ac6e3bc28727a1864dee327a31e014ab39347699fd74bdb"
+  },
+  {
     "name": "DeepseekCoder-1.3B",
     "license_name": "Deepseek License",
     "license_url": "https://github.com/deepseek-ai/deepseek-coder/blob/main/LICENSE-MODEL",
