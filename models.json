@@ -117,6 +117,17 @@
     "sha256": "0ff88d9b7a197371e929b788ed4473cd41a09c10f4584953bb382974b96cd0bb"
   },
   {
+    "name": "Mistral-70B-q5",
+    "license_name": "Apache 2.0",
+    "license_url": "https://choosealicense.com/licenses/apache-2.0/",
+    "provider_url": "https://huggingface.co/miqudev/miqu-1-70b",
+    "chat_template": "<s>{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + '</s> ' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}",
+    "urls": [
+      "https://huggingface.co/miqudev/miqu-1-70b/resolve/main/miqu-1-70b.q5_K_M.gguf"
+    ],
+    "sha256": "de208b85012c6a28f77234478b52ea358dd93b92e955b821a76ae3d997602e08"
+  },
+  {
     "name": "DeepseekCoder-1.3B",
     "license_name": "Deepseek License",
     "license_url": "https://github.com/deepseek-ai/deepseek-coder/blob/main/LICENSE-MODEL",
