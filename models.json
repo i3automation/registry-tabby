@@ -95,7 +95,18 @@
     "sha256": "7c2d59e6b6e404de3ac6e3bc28727a1864dee327a31e014ab39347699fd74bdb"
   },
   {
-    "name": "Mistral-70B-leak",
+    "name": "Mistral-70B-q2",
+    "license_name": "Apache 2.0",
+    "license_url": "https://choosealicense.com/licenses/apache-2.0/",
+    "provider_url": "https://huggingface.co/miqudev/miqu-1-70b",
+    "chat_template": "<s>{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + '</s> ' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}",
+    "urls": [
+      "https://huggingface.co/miqudev/miqu-1-70b/resolve/main/miqu-1-70b.q2_K.gguf"
+    ],
+    "sha256": "7585dc5ed92cb00007cdd86b7bc635622752e72bff2e8be9275ee24bda4a798b"
+  },
+  {
+    "name": "Mistral-70B-q4",
     "license_name": "Apache 2.0",
     "license_url": "https://choosealicense.com/licenses/apache-2.0/",
     "provider_url": "https://huggingface.co/miqudev/miqu-1-70b",
